@@ -144,10 +144,26 @@ stocks = (
 total = sum(price * qty for _, price, qty in stocks) # _자리에 name이 들어가나 안쓰기 때문에 언더바 표시
 # total = sum([price * qty for _, price, qty in stocks]) / 똑같다 
 
+
 print(f"총액: {total:,}원")
 
 #for entry in stocks:
 #   total += entry[1] * entry[2]
 #print(total)                       / for문으로 하기
+
+
+stocks = (
+    ("사과", "바나나", "체리"),
+    (1000, 2000, 5000),
+    (5, 3, 2),
+)
+
+total = sum(price * qty for _,price, qty in zip(*stocks))
+print(f"총액: {total:,}원")
+
+
+
+
+
 
 # ✅ 총액: 21,000원
